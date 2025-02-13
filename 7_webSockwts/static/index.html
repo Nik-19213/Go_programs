@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Go WebSocket Tutorial</title>
+  </head>
+  <body>
+    <h2>Socket.IO Chat Example</h2>
+
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.6.1/dist/socket.io.min.js"></script>
+    <script>
+      // Connect to the WebSocket server
+      const socket = io("http://localhost:5000");
+
+      // Emit a chat message to the server
+      socket.emit("chat message", "Hello World from Client");
+
+      // Listen for chat messages from the server
+      socket.on("chat message", (msg) => {
+        console.log("Message received:", msg);
+      });
+
+      // Handle connection success
+      socket.on("connect", () => {
+        console.log("Connected to the server with ID:", socket.id);
+      });
+
+      // Handle disconnection
+      socket.on("disconnect", (reason) => {
+        console.log("Disconnected from the server:", reason);
+      });
+    </script>
+  </body>
+</html>
