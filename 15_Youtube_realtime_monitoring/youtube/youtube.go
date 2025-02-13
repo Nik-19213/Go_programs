@@ -45,8 +45,8 @@ func GetSubscribers() (Items, error) {
 	// Here we define the query parameters and their respective values
 	q := req.URL.Query()
 	// Fetch API key and channel ID from environment variables
-	q.Add("key", "AIzaSyCyeGcixaDtPHXLItU0IEbRW90w68yWK14")
-	q.Add("id", "UCwFl9Y49sWChrddQTD9QhRA")
+	q.Add("key", "YOUR_API_HERE")
+	q.Add("id", "YOUTUBE_CHANNEL_ID")
 	q.Add("part", "statistics")
 	req.URL.RawQuery = q.Encode()
 
