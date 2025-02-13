@@ -14,7 +14,7 @@ type User struct {
 func main() {
 	fmt.Println("Go MySQL Tutorial")
 
-	db, err := sql.Open("mysql", "root:Nitin@9897@tcp(127.0.0.1:3306)/testdb")
+	db, err := sql.Open("mysql", "root:password@tcp(127.0.0.1:3306)/testdb")
 	if err != nil {
 		panic(err.Error())
 	}
